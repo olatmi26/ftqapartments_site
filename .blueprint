@@ -1,0 +1,248 @@
+created:
+    - app/Http/Controllers/CategoryController.php
+    - app/Http/Controllers/Property/ApartmentController.php
+    - app/Http/Controllers/Apartment/ApartmentRatingController.php
+    - app/Http/Controllers/Apartment/TestimonialController.php
+    - app/Http/Controllers/Apartment/ApartmentReviewController.php
+    - app/Http/Controllers/Property/Apartment/AmenitiesController.php
+    - app/Http/Controllers/Apartment/PropertyImageController.php
+    - app/Http/Controllers/Apartment/PetPolicyController.php
+    - app/Http/Controllers/Apartment/ApartmentPetPolicyController.php
+    - app/Http/Controllers/Property/Apartment/FeesController.php
+    - app/Http/Controllers/Property/Apartment/LeasePeriodController.php
+    - app/Http/Controllers/Property/Apartment/ApartmentLeasePeriodController.php
+    - app/Http/Controllers/Apartment/TermsController.php
+    - app/Http/Controllers/Apartment/ApartmentTermsController.php
+    - app/Http/Controllers/Apartment/BookingController.php
+    - app/Http/Controllers/Apartment/PaymentController.php
+    - app/Http/Controllers/UserInfoController.php
+    - app/Http/Controllers/ContactUsController.php
+    - app/Http/Controllers/Apartment/CartController.php
+    - database/factories/CategoryFactory.php
+    - database/factories/CountryFactory.php
+    - database/factories/StateFactory.php
+    - database/factories/CityFactory.php
+    - database/factories/Property/ApartmentFactory.php
+    - database/factories/Property/Apartment/AmenitiesFactory.php
+    - database/factories/Apartment/PropertyImageFactory.php
+    - database/factories/Apartment/PetPolicyFactory.php
+    - database/factories/Apartment/ApartmentPetPolicyFactory.php
+    - database/factories/Property/Apartment/FeesFactory.php
+    - database/factories/Property/Apartment/LeasePeriodFactory.php
+    - database/factories/Property/Apartment/ApartmentLeasePeriodFactory.php
+    - database/factories/Apartment/ApartmentReviewFactory.php
+    - database/factories/Apartment/ApartmentRatingFactory.php
+    - database/factories/Apartment/TestimonialFactory.php
+    - database/factories/Apartment/TermsFactory.php
+    - database/factories/Apartment/ApartmentTermsFactory.php
+    - database/factories/Apartment/BookingFactory.php
+    - database/factories/Apartment/PaymentFactory.php
+    - database/factories/UserInfoFactory.php
+    - database/factories/Apartment/CartFactory.php
+    - database/factories/ContactUsFactory.php
+    - database/migrations/2023_02_02_225201_create_categories_table.php
+    - database/migrations/2023_02_02_225202_create_countries_table.php
+    - database/migrations/2023_02_02_225203_create_states_table.php
+    - database/migrations/2023_02_02_225204_create_cities_table.php
+    - database/migrations/2023_02_02_225205_create_apartments_table.php
+    - database/migrations/2023_02_02_225206_create_amenities_table.php
+    - database/migrations/2023_02_02_225207_create_property_images_table.php
+    - database/migrations/2023_02_02_225208_create_pet_policies_table.php
+    - database/migrations/2023_02_02_225209_create_apartment_pet_policies_table.php
+    - database/migrations/2023_02_02_225210_create_fees_table.php
+    - database/migrations/2023_02_02_225211_create_lease_periods_table.php
+    - database/migrations/2023_02_02_225212_create_apartment_lease_periods_table.php
+    - database/migrations/2023_02_02_225213_create_apartment_reviews_table.php
+    - database/migrations/2023_02_02_225214_create_apartment_ratings_table.php
+    - database/migrations/2023_02_02_225215_create_testimonials_table.php
+    - database/migrations/2023_02_02_225216_create_terms_table.php
+    - database/migrations/2023_02_02_225217_create_apartment_terms_table.php
+    - database/migrations/2023_02_02_225218_create_bookings_table.php
+    - database/migrations/2023_02_02_225219_create_payments_table.php
+    - database/migrations/2023_02_02_225220_create_user_infos_table.php
+    - database/migrations/2023_02_02_225221_create_carts_table.php
+    - database/migrations/2023_02_02_225222_create_contact_us_table.php
+    - app/Models/Category.php
+    - app/Models/Country.php
+    - app/Models/State.php
+    - app/Models/City.php
+    - app/Models/Property/Apartment.php
+    - app/Models/Property/Apartment/Amenities.php
+    - app/Models/Apartment/PropertyImage.php
+    - app/Models/Apartment/PetPolicy.php
+    - app/Models/Apartment/ApartmentPetPolicy.php
+    - app/Models/Property/Apartment/Fees.php
+    - app/Models/Property/Apartment/LeasePeriod.php
+    - app/Models/Property/Apartment/ApartmentLeasePeriod.php
+    - app/Models/Apartment/ApartmentReview.php
+    - app/Models/Apartment/ApartmentRating.php
+    - app/Models/Apartment/Testimonial.php
+    - app/Models/Apartment/Terms.php
+    - app/Models/Apartment/ApartmentTerms.php
+    - app/Models/Apartment/Booking.php
+    - app/Models/Apartment/Payment.php
+    - app/Models/UserInfo.php
+    - app/Models/Apartment/Cart.php
+    - app/Models/ContactUs.php
+    - database/seeders/CategorySeeder.php
+    - database/seeders/LeasePeriodSeeder.php
+    - database/seeders/AmenitiesSeeder.php
+    - tests/Feature/Http/Controllers/CategoryControllerTest.php
+    - tests/Feature/Http/Controllers/Property/ApartmentControllerTest.php
+    - tests/Feature/Http/Controllers/Apartment/ApartmentRatingControllerTest.php
+    - tests/Feature/Http/Controllers/Apartment/TestimonialControllerTest.php
+    - tests/Feature/Http/Controllers/Apartment/ApartmentReviewControllerTest.php
+    - tests/Feature/Http/Controllers/Property/Apartment/AmenitiesControllerTest.php
+    - tests/Feature/Http/Controllers/Apartment/PropertyImageControllerTest.php
+    - tests/Feature/Http/Controllers/Apartment/PetPolicyControllerTest.php
+    - tests/Feature/Http/Controllers/Apartment/ApartmentPetPolicyControllerTest.php
+    - tests/Feature/Http/Controllers/Property/Apartment/FeesControllerTest.php
+    - tests/Feature/Http/Controllers/Property/Apartment/LeasePeriodControllerTest.php
+    - tests/Feature/Http/Controllers/Property/Apartment/ApartmentLeasePeriodControllerTest.php
+    - tests/Feature/Http/Controllers/Apartment/TermsControllerTest.php
+    - tests/Feature/Http/Controllers/Apartment/ApartmentTermsControllerTest.php
+    - tests/Feature/Http/Controllers/Apartment/BookingControllerTest.php
+    - tests/Feature/Http/Controllers/Apartment/PaymentControllerTest.php
+    - tests/Feature/Http/Controllers/UserInfoControllerTest.php
+    - tests/Feature/Http/Controllers/ContactUsControllerTest.php
+    - tests/Feature/Http/Controllers/Apartment/CartControllerTest.php
+    - app/Http/Requests/CategoryUpdateRequest.php
+    - app/Http/Requests/CategoryStoreRequest.php
+    - app/Http/Requests/Property/ApartmentUpdateRequest.php
+    - app/Http/Requests/Property/ApartmentStoreRequest.php
+    - app/Http/Requests/Apartment/ApartmentRatingUpdateRequest.php
+    - app/Http/Requests/Apartment/ApartmentRatingStoreRequest.php
+    - app/Http/Requests/Apartment/TestimonialUpdateRequest.php
+    - app/Http/Requests/Apartment/TestimonialStoreRequest.php
+    - app/Http/Requests/Apartment/ApartmentReviewUpdateRequest.php
+    - app/Http/Requests/Apartment/ApartmentReviewStoreRequest.php
+    - app/Http/Requests/Property\Apartment/AmenityUpdateRequest.php
+    - app/Http/Requests/Property\Apartment/AmenityStoreRequest.php
+    - app/Http/Requests/Apartment/PropertyImageUpdateRequest.php
+    - app/Http/Requests/Apartment/PropertyImageStoreRequest.php
+    - app/Http/Requests/Apartment/PetPolicyUpdateRequest.php
+    - app/Http/Requests/Apartment/PetPolicyStoreRequest.php
+    - app/Http/Requests/Apartment/ApartmentPetPolicyUpdateRequest.php
+    - app/Http/Requests/Apartment/ApartmentPetPolicyStoreRequest.php
+    - app/Http/Requests/Property\Apartment/FeeUpdateRequest.php
+    - app/Http/Requests/Property\Apartment/FeeStoreRequest.php
+    - app/Http/Requests/Property\Apartment/LeasePeriodUpdateRequest.php
+    - app/Http/Requests/Property\Apartment/LeasePeriodStoreRequest.php
+    - app/Http/Requests/Property\Apartment/ApartmentLeasePeriodUpdateRequest.php
+    - app/Http/Requests/Property\Apartment/ApartmentLeasePeriodStoreRequest.php
+    - app/Http/Requests/Apartment/TermUpdateRequest.php
+    - app/Http/Requests/Apartment/TermStoreRequest.php
+    - app/Http/Requests/Apartment/ApartmentTermUpdateRequest.php
+    - app/Http/Requests/Apartment/ApartmentTermStoreRequest.php
+    - app/Http/Requests/Apartment/BookingUpdateRequest.php
+    - app/Http/Requests/Apartment/BookingStoreRequest.php
+    - app/Http/Requests/Apartment/PaymentUpdateRequest.php
+    - app/Http/Requests/Apartment/PaymentStoreRequest.php
+    - app/Http/Requests/UserInfoUpdateRequest.php
+    - app/Http/Requests/UserInfoStoreRequest.php
+    - app/Http/Requests/ContactUUpdateRequest.php
+    - app/Http/Requests/ContactUStoreRequest.php
+    - app/Http/Requests/Apartment/CartUpdateRequest.php
+    - app/Http/Requests/Apartment/CartStoreRequest.php
+    - resources/views/category/index.blade.php
+    - resources/views/category/create.blade.php
+    - resources/views/category/show.blade.php
+    - resources/views/category/edit.blade.php
+    - resources/views/apartment/index.blade.php
+    - resources/views/apartment/create.blade.php
+    - resources/views/apartment/show.blade.php
+    - resources/views/apartment/edit.blade.php
+    - resources/views/apartmentRating/index.blade.php
+    - resources/views/apartmentRating/create.blade.php
+    - resources/views/apartmentRating/show.blade.php
+    - resources/views/apartmentRating/edit.blade.php
+    - resources/views/testimonial/index.blade.php
+    - resources/views/testimonial/create.blade.php
+    - resources/views/testimonial/show.blade.php
+    - resources/views/testimonial/edit.blade.php
+    - resources/views/apartmentReview/index.blade.php
+    - resources/views/apartmentReview/create.blade.php
+    - resources/views/apartmentReview/show.blade.php
+    - resources/views/apartmentReview/edit.blade.php
+    - resources/views/amenity/index.blade.php
+    - resources/views/amenity/create.blade.php
+    - resources/views/amenity/show.blade.php
+    - resources/views/amenity/edit.blade.php
+    - resources/views/propertyImage/index.blade.php
+    - resources/views/propertyImage/create.blade.php
+    - resources/views/propertyImage/show.blade.php
+    - resources/views/propertyImage/edit.blade.php
+    - resources/views/petPolicy/index.blade.php
+    - resources/views/petPolicy/create.blade.php
+    - resources/views/petPolicy/show.blade.php
+    - resources/views/petPolicy/edit.blade.php
+    - resources/views/apartmentPetPolicy/index.blade.php
+    - resources/views/apartmentPetPolicy/create.blade.php
+    - resources/views/apartmentPetPolicy/show.blade.php
+    - resources/views/apartmentPetPolicy/edit.blade.php
+    - resources/views/fee/index.blade.php
+    - resources/views/fee/create.blade.php
+    - resources/views/fee/show.blade.php
+    - resources/views/fee/edit.blade.php
+    - resources/views/leasePeriod/index.blade.php
+    - resources/views/leasePeriod/create.blade.php
+    - resources/views/leasePeriod/show.blade.php
+    - resources/views/leasePeriod/edit.blade.php
+    - resources/views/apartmentLeasePeriod/index.blade.php
+    - resources/views/apartmentLeasePeriod/create.blade.php
+    - resources/views/apartmentLeasePeriod/show.blade.php
+    - resources/views/apartmentLeasePeriod/edit.blade.php
+    - resources/views/term/index.blade.php
+    - resources/views/term/create.blade.php
+    - resources/views/term/show.blade.php
+    - resources/views/term/edit.blade.php
+    - resources/views/apartmentTerm/index.blade.php
+    - resources/views/apartmentTerm/create.blade.php
+    - resources/views/apartmentTerm/show.blade.php
+    - resources/views/apartmentTerm/edit.blade.php
+    - resources/views/booking/index.blade.php
+    - resources/views/booking/create.blade.php
+    - resources/views/booking/show.blade.php
+    - resources/views/booking/edit.blade.php
+    - resources/views/payment/index.blade.php
+    - resources/views/payment/create.blade.php
+    - resources/views/payment/show.blade.php
+    - resources/views/payment/edit.blade.php
+    - resources/views/userInfo/index.blade.php
+    - resources/views/userInfo/create.blade.php
+    - resources/views/userInfo/show.blade.php
+    - resources/views/userInfo/edit.blade.php
+    - resources/views/contactU/index.blade.php
+    - resources/views/contactU/create.blade.php
+    - resources/views/contactU/show.blade.php
+    - resources/views/contactU/edit.blade.php
+    - resources/views/cart/index.blade.php
+    - resources/views/cart/create.blade.php
+    - resources/views/cart/show.blade.php
+    - resources/views/cart/edit.blade.php
+updated:
+    - routes/web.php
+models:
+    User: {  }
+    Category: { category: 'string index nullable' }
+    Country: { sortname: 'string nullable', name: 'string nullable', phonecode: 'string nullable' }
+    State: { name: 'string nullable', country_id: 'unsigned integer nullable' }
+    City: { name: 'string nullable', state_id: 'unsigned integer nullable' }
+    Property\Apartment: { propertyID: 'string:6 unique index nullable', category_id: 'foreign index nullable', state_id: 'foreign index nullable', title: 'string nullable index', location: 'string nullable index', city: 'string nullable index', nearByCities: 'string nullable index', number_of_room: 'integer nullable index', pricePerMonth: 'decimal:7,6 nullable index', pricePerYear: 'decimal:7,6 nullable index', description: 'string nullable index', mapStreetLatitude: 'decimal:7,6 nullable', mapStreetLongitude: 'decimal:7,6 nullable', majorBusStop: 'string nullable index', nearbyBusStop: 'string nullable index', nearByShoppingMall: 'string nullable index', availability: 'boolean nullable index', enteredBy: 'id foreign:users.id  nullable index' }
+    Property\Apartment\Amenities: { apartment_id: 'foreign nullable index', No_of_bedrooms: 'integer nullable index', bath_rooms: 'integer nullable index', square_Feet: 'integer nullable index' }
+    Apartment\PropertyImage: { apartment_id: 'foreign nullable index', image_url: 'string nullable index', imageName: 'string nullable index', isFeatured: 'boolean nullable index' }
+    Apartment\PetPolicy: { pet_name: 'string nullable', allowed: 'boolean nullable index', conditions: 'long text nullable' }
+    Apartment\ApartmentPetPolicy: { apartment_id: 'foreign nullable index', pet_policies_id: 'foreign index nullable' }
+    Property\Apartment\Fees: { other_fees: 'decimal:7,5 nullable', apartment_id: 'foreign nullable index' }
+    Property\Apartment\LeasePeriod: { period: 'string null index', amount: 'double null index' }
+    Property\Apartment\ApartmentLeasePeriod: { apartment_id: 'foreign nullable index', lease_period_id: 'foreign nullable index' }
+    Apartment\ApartmentReview: { apartment_id: 'foreign nullable index', reviewer: 'id foreign:users.id  nullable index', review: 'long text nullable index', satisfaction: 'integer nullable index' }
+    Apartment\ApartmentRating: { apartment_id: 'foreign nullable index', rater: 'id foreign:users.id  nullable index', rating: 'integer nullable index' }
+    Apartment\Testimonial: { user_id: 'foreign nullable index', testimony: 'long text nullable index' }
+    Apartment\Terms: { terms: 'long text nullable index' }
+    Apartment\ApartmentTerms: { apartment_id: 'foreign nullable index', terms_id: 'foreign nullable index' }
+    Apartment\Booking: { apartment_id: 'foreign nullable index', user_id: 'foreign nullable index', cart_id: 'foreign nullable index', dateNeeded: 'date nullable index', dateToArrive: 'date nullable index', dateToParkin: 'date nullable index', AcceptingTerms: 'boolean nullable index', amountPaid: 'double:8,2 nullable index', status: 'boolean nullable index' }
+    Apartment\Payment: { apartment_id: 'foreign nullable index', booking_id: 'foreign nullable index', user_id: 'foreign nullable index', amount: 'double nullable index', paymentMethod: 'string nullable index', ref: 'string nullable index', status: 'boolean nullable index' }
+    UserInfo: { user_id: 'foreign nullable index', nextOfKin_fullName: 'string nullable', relationshipWithYou: 'string nullable', nextOfKin_phoneN0: 'string:14 nullable', nextOfKin_email: 'string nullable', nextOfKin_address: 'string nullable index' }
+    Apartment\Cart: { apartment_id: 'foreign nullable index', user_id: 'foreign nullable index', dateNeeded: 'date nullable index' }
+    ContactUs: { email: 'string nullable index', fullName: 'string nullable index', message: 'longText nullable index', subject: 'string nullable index', phone: 'string:14 nullable index' }

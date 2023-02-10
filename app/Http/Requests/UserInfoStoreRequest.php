@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class UserInfoStoreRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+            'user_id' => ['integer', 'exists:users,id'],
+            'nextOfKin_fullName' => ['string'],
+            'relationshipWithYou' => ['string'],
+            'nextOfKin_phoneN0' => ['string', 'max:14'],
+            'nextOfKin_email' => ['string'],
+            'user_id' => ['integer', 'exists:users,id'],
+            'nextOfKin_fullName' => ['string'],
+            'relationshipWithYou' => ['string'],
+            'nextOfKin_phoneN0' => ['string', 'max:14'],
+            'nextOfKin_email' => ['string'],
+            'nextOfKin_address' => ['string'],
+        ];
+    }
+}

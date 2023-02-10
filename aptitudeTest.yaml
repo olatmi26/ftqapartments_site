@@ -1,0 +1,94 @@
+models:
+  Company:
+    name: string
+    code: string:6 unique
+
+  Department:
+    name: string
+    code: string:6 unique
+
+  Location:
+    name: string
+    code: string:6 unique
+
+  Quiz\Question:
+    question: longText
+
+  DepartmentQuestion:
+    department_id: id foreign index nullable
+    question_id: id foreign index nullable
+
+  Quiz\Option:
+    question_id: id foreign index nullable
+    option: sting index
+    is_answer: boolean default:false
+
+  Quiz\Setup:
+    name: string nullable
+    description: string nullable
+    timeAlloted: timestamp nullable
+    Location_id: unsigned integer nullable
+    DateToRollout: datetime nullable index
+    TimeAllocated: timestamp nullable
+    RollOutBy: unsigned integer nullable
+    relationships:
+      belongsToMany: Question
+
+  Quiz\ExamAttempt:
+    user_id: id foreign nullable
+    question_id: id foreign nullable
+    option_id: id foreign nullable
+    is_correct: boolean nullable default false
+
+  Quiz\QuestionSetup:
+    question_id: id foreign index nullable
+    setup_id: id foreign index nullable
+
+  Quiz\CompanyQuiz:
+    company_id: id foreign nullable
+    question_setup_id: id foreign nullable
+
+
+
+seeders: Company, Department, Question, Option
+
+controllers:
+  Quiz\Question:
+    resource: index, show, create, edit, destroy, update
+    store:
+      validate: question
+      save: question
+      flash: question-added-successively
+      redirect: Question.index
+
+  Quiz\Option:
+    resource: index, show, create, edit, destroy, update
+    store:
+      validate: question_id, option, is_answer:sometime
+      save: option
+      flash: option-added-successively
+      redirect: Question.index
+
+  Department:
+    resource: index, show, create, edit, destroy, update
+    store:
+      validate: name
+      save: department
+      flash: department-added-successively
+      redirect: Department.index
+
+  Quiz\CompanyQuiz:
+    resource: index, show, create, edit, destroy
+    store:
+      validate: company_id,  department_id,  setup_quiz_id,
+      save: mergeCompanyToQuiz
+      flash: mergeCompanyToQuiz.created
+      redirect: MergeCompanyToQuiz.index
+
+  Quiz\Setup:
+    resource: index, show, create, edit, destroy
+    store:
+      validate: name, description:sometime, timeAlloted:nullable|sometime, Location_id:sometime, DateToRollout:nullable, TimeAllocated:nullable|sometime, RollOutBy:nullable
+      save: mergeCompanyToQuiz
+      flash: mergeCompanyToQuiz.created
+      redirect: MergeCompanyToQuiz.index

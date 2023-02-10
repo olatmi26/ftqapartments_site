@@ -1,0 +1,286 @@
+models:
+  Category:
+    category: string index nullable
+
+  Country:
+    sortname: string nullable
+    name: string nullable
+    phonecode: string nullable
+
+  State:
+    name: string nullable
+    country_id: unsigned integer nullable
+
+  City:
+    name: string nullable
+    state_id: unsigned integer nullable
+
+  Property\Apartment:
+    propertyID: string:6 unique index nullable
+    category_id: foreign index nullable
+    state_id: foreign index nullable
+    title: string nullable index
+    location: string nullable index
+    city: string nullable index
+    nearByCities: string nullable index
+    number_of_room: integer nullable index
+    pricePerMonth: decimal:7,6 nullable index
+    pricePerYear: decimal:7,6 nullable index
+    description: string nullable index
+    mapStreetLatitude: decimal:7,6 nullable
+    mapStreetLongitude: decimal:7,6 nullable
+    majorBusStop: string nullable index
+    nearbyBusStop: string nullable index
+    nearByShoppingMall: string nullable index
+    availability: boolean nullable index
+    enteredBy: id foreign:users.id  nullable index
+
+  Property\Apartment\Amenities:
+    apartment_id: foreign nullable index
+    No_of_bedrooms: integer nullable index
+    bath_rooms: integer nullable index
+    square_Feet: integer nullable index
+
+  Apartment\PropertyImage:
+    apartment_id: foreign nullable index
+    image_url: string nullable index
+    imageName: string nullable index
+    isFeatured: boolean nullable index
+
+  Apartment\PetPolicy:
+    pet_name: string nullable
+    allowed: boolean nullable index
+    conditions: long text nullable
+
+  Apartment\ApartmentPetPolicy:
+    apartment_id: foreign nullable index
+    pet_policies_id: foreign index nullable
+
+  Property\Apartment\Fees:
+    other_fees: decimal:7,5 nullable
+    apartment_id: foreign nullable index
+
+  Property\Apartment\LeasePeriod:
+    period: string null index
+    amount: double null index
+
+  Property\Apartment\ApartmentLeasePeriod:
+    apartment_id: foreign nullable index
+    lease_period_id: foreign nullable index
+
+  Apartment\ApartmentReview:
+    apartment_id: foreign nullable index
+    reviewer: id foreign:users.id  nullable index
+    review: long text nullable index
+    satisfaction: integer nullable index
+
+  Apartment\ApartmentRating:
+    apartment_id: foreign nullable index
+    rater: id foreign:users.id  nullable index
+    rating: integer nullable index
+
+  Apartment\Testimonial:
+    user_id: foreign nullable index
+    testimony: long text nullable index
+
+  Apartment\Terms:
+    terms: long text nullable index
+
+  Apartment\ApartmentTerms:
+    apartment_id: foreign nullable index
+    terms_id: foreign nullable index
+
+  Apartment\Booking:
+    apartment_id: foreign nullable index
+    user_id: foreign nullable index
+    cart_id: foreign nullable index
+    dateNeeded: date nullable index
+    dateToArrive: date nullable index
+    dateToParkin: date nullable index
+    AcceptingTerms: boolean nullable index
+    amountPaid: double:8,2 nullable index
+    status: boolean nullable index
+
+  Apartment\Payment:
+    apartment_id: foreign nullable index
+    booking_id: foreign nullable index
+    user_id: foreign nullable index
+    amount: double nullable index
+    paymentMethod: string nullable index
+    ref: string nullable index
+    status: boolean nullable index
+
+  UserInfo:
+    user_id: foreign nullable index
+    nextOfKin_fullName: string nullable
+    relationshipWithYou: string nullable
+    nextOfKin_phoneN0: string:14 nullable
+    nextOfKin_email: string nullable
+    nextOfKin_address: string nullable index
+
+  Apartment\Cart:
+    apartment_id: foreign nullable index
+    user_id: foreign nullable index
+    dateNeeded: date nullable index
+
+  ContactUs:
+    email: string nullable index
+    fullName: string nullable index
+    message: longText nullable index
+    subject: string nullable index
+    phone: string:14 nullable index
+
+seeders: Category, LeasePeriod, Amenities
+
+controllers:
+  Category:
+    resource: index, show, create, edit, destroy, update
+    store:
+      validate: category
+      save: category
+      flash: category-added-successively
+      redirect: Category.index
+
+  Property\Apartment:
+    resource: index, show, create, edit, destroy, update
+    store:
+      validate: propertyID:nullable, category_id, title, location, city, nearByCities:nullable, number_of_room:nullable, pricePerMonth:nullable, pricePerYear:nullable, description, majorBusStop:nullable, nearbyBusStop:nullable, nearByShoppingMall:nullable, state_id, availability, enteredBy:nullable, mapStreetLatitude:nullable, mapStreetLongitude:nullable
+      save: apartment
+      flash: apartment-added-successively
+      redirect: Apartment.index
+
+  Apartment\ApartmentRating:
+    resource: index, show, create, edit, destroy, update
+    store:
+      validate: apartment_id, rater:nullable, rating
+      save: apartmentRating
+      flash: rating-added-successively
+      redirect: Apartment.index
+
+  Apartment\Testimonial:
+    resource: index, show, create, edit, destroy, update
+    store:
+      validate: user_id, testimony
+      save: testimonial
+      flash: testimonial-added-successively
+      redirect: Testimonial.index
+
+  Apartment\ApartmentReview:
+    resource: index, show, create, edit, destroy, update
+    store:
+      validate: apartment_id, reviewer, review, satisfaction:null
+      save: review
+      flash: review-added-successively
+      redirect: ApartmentReview.index
+
+  Property\Apartment\Amenities:
+    resource: index, show, create, edit, destroy, update
+    store:
+      validate: apartment_id, No_of_bedrooms, bath_rooms:nullable, square_Feet:nullable
+      save: amenity
+      flash: amenities-added-successively
+      redirect: Apartment.show
+
+  Apartment\PropertyImage:
+    resource: index, show, create, edit, destroy, update
+    store:
+      validate: apartment_id, image_url, imageName, isFeatured
+      save:
+      flash: propertyImage-added-successively
+      redirect: ApartmentReview.index
+
+  Apartment\PetPolicy:
+    resource: index, show, create, edit, destroy, update
+    store:
+      validate: pet_name, allowed, conditions
+      save: petPolicy
+      flash: PetPolicy-added-successively
+      redirect: PetPolicy.index
+
+  Apartment\ApartmentPetPolicy:
+    resource: index, show, create, edit, destroy, update
+    store:
+      validate: apartment_id, pet_policies_id
+      save: petPolicy
+      flash: petPolicy-added-successively
+      redirect: Apartment.index
+
+  Property\Apartment\Fees:
+    resource: index, show, create, edit, destroy, update
+    store:
+      validate: other_fees, apartment_id
+      save: fees
+      flash: fees-added-successively
+      redirect: Apartment.index
+
+  Property\Apartment\LeasePeriod:
+    resource: index, show, create, edit, destroy, update
+    store:
+      validate: period, amount:nullable
+      save: period
+      flash: period-added-successively
+      redirect: ApartmentReview.index
+
+  Property\Apartment\ApartmentLeasePeriod:
+    resource: index, show, create, edit, destroy, update
+    store:
+      validate: apartment_id, lease_period_id
+      save: leasePeriod
+      flash: leasePeriod-added-successively
+      redirect: ApartmentReview.index
+
+  Apartment\Terms:
+    resource: index, show, create, edit, destroy, update
+    store:
+      validate: terms
+      save: terms
+      flash: terms-added-successively
+      redirect: Terms.index
+
+  Apartment\ApartmentTerms:
+    resource: index, show, create, edit, destroy, update
+    store:
+      validate: apartment_id, terms_id
+      save: apartmentTerms
+      flash: apartmentTerms-added-successively
+      redirect: ApartmentTerms.index
+
+  Apartment\Booking:
+    resource: index, show, create, edit, destroy, update
+    store:
+      validate: apartment_id, user_id, cart_id, dateNeeded, dateToArrive:nullable, dateToParkin:nullable, AcceptingTerms, amountPaid, status
+      save: booking
+      flash: booking-added-successively
+      redirect: Booking.index
+
+  Apartment\Payment:
+    resource: index, show, create, edit, destroy, update
+    store:
+      validate: apartment_id, booking_id, user_id, amount, paymentMethod:nullable, ref, status
+      save: payment
+      flash: payment-transaction-successively
+      redirect: Booking.index
+
+  UserInfo:
+    resource: index, show, create, edit, destroy, update
+    store:
+      validate: user_id, nextOfKin_fullName, relationshipWithYou, nextOfKin_phoneN0, nextOfKin_email, nextOfKin_address:null
+      save: userInfo
+      flash: userInfo-added-successively
+      redirect: Booking.index
+
+  ContactUs:
+    resource: index, show, create, edit, destroy, update
+    store:
+      validate: email, fullName, message, subject, phone
+      save: contactUs
+      flash: contactUs-saved-successively
+      redirect: ContactUs.index
+
+  Apartment\Cart:
+    resource: index, show, create, edit, destroy, update
+    store:
+      validate: apartment_id, user_id, dateNeeded
+      save: cart
+      flash: apartment-added-to-cart-successively
+      redirect: Apartment.index
